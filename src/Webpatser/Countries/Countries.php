@@ -40,7 +40,7 @@ class Countries extends Model {
     protected function getCountries()
     {
         //Get the countries from the JSON file
-        if (sizeof($this->countries) == 0){
+        if (empty($this->countries)){
             $this->countries = json_decode(file_get_contents(__DIR__ . '/Models/countries.json'), true);
         }
 
@@ -50,7 +50,7 @@ class Countries extends Model {
 
 	/**
 	 * Returns one country
-	 * 
+	 *
 	 * @param string $id The country id
      *
 	 * @return array
@@ -63,9 +63,9 @@ class Countries extends Model {
 
 	/**
 	 * Returns a list of countries
-	 * 
+	 *
 	 * @param string sort
-	 * 
+	 *
 	 * @return array
 	 */
 	public function getList($sort = null)
@@ -75,7 +75,7 @@ class Countries extends Model {
 
 	    //Sorting
 	    $validSorts = [
-	        'capital', 
+	        'capital',
 	        'citizenship',
 	        'country-code',
 	        'currency',
@@ -103,7 +103,7 @@ class Countries extends Model {
 	                return 1;
 	            } else {
 	                return strcasecmp($a[$sort], $b[$sort]);
-	            } 
+	            }
 	        });
 	    }
 

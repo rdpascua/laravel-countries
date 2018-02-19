@@ -1,9 +1,5 @@
 # Laravel Countries
 
-[![Total Downloads](https://poser.pugx.org/webpatser/laravel-countries/downloads.svg)](https://packagist.org/packages/webpatser/laravel-countries)
-[![Latest Stable Version](https://poser.pugx.org/webpatser/laravel-countries/v/stable.svg)](https://packagist.org/packages/webpatser/laravel-countries)
-[![Latest Unstable Version](https://poser.pugx.org/webpatser/laravel-countries/v/unstable.svg)](https://packagist.org/packages/webpatser/laravel-countries)
-
 Laravel Countries is a bundle for Laravel, providing Almost ISO 3166_2, 3166_3, currency, Capital and more for all countries.
 
 **Please note that version 1.4 is Laravel 5 only, older versions of Laravel should use version 1.3.4 instead**
@@ -13,7 +9,7 @@ Laravel Countries is a bundle for Laravel, providing Almost ISO 3166_2, 3166_3, 
 Add `webpatser/laravel-countries` to `composer.json`.
 
     "webpatser/laravel-countries": "dev-master"
-    
+
 Run `composer update` to pull down the latest version of Country List.
 
 **If you're using Laravel 5.5, you don't have to edit `app/config/app.php`.**
@@ -29,7 +25,7 @@ Now add the alias.
     'aliases' => [
         'Countries' => 'Webpatser\Countries\CountriesFacade',
     ]
-    
+
 
 ## Model
 
@@ -41,15 +37,15 @@ Next generate the migration file:
 
     $ php artisan countries:migration
     $ composer dump-autoload
-    
+
 It will generate the `<timestamp>_setup_countries_table.php` migration and the `CountriesSeeder.php` seeder. To make sure the data is seeded insert the following code in the `seeds/DatabaseSeeder.php`
 
     //Seed the countries
     $this->call('CountriesSeeder');
-    $this->command->info('Seeded the countries!'); 
+    $this->command->info('Seeded the countries!');
 
 You may now run it with the artisan migrate command:
 
     $ php artisan migrate --seed
-    
+
 After running this command the filled countries table will be available
